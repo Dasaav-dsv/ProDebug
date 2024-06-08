@@ -23,10 +23,10 @@ In one of the supported games, load the DLL through any method, at any time befo
 ### Supported Games
 DSR and DS3 may be supported at a later date (not earlier than after ER SOTE is released):
 
-- [ ] DARK SOULS REMASTERED
-- [ ] DARK SOULS III
-- [x] ELDEN RING
 - [x] ARMORED CORE VI
+- [x] ELDEN RING
+- [ ] DARK SOULS III
+- [ ] DARK SOULS REMASTERED
 
 
 ### Q&A
@@ -36,7 +36,7 @@ DSR and DS3 may be supported at a later date (not earlier than after ER SOTE is 
 
 - Q: How long will it work for?
 
-  A: Until this (simple) way of patching it out is itself patched
+  A: Until this (simple) way of patching it out is itself patched.
 
 - Q: Will I get banned for using this?
 
