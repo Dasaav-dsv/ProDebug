@@ -7,7 +7,7 @@ hinder the usability of debuggers, even force-closing the game if a debugger is 
 This is done by trapping the attached debugger and/or by detecting its presence through
 VEH (Vectored Exception Handling).
 
-As the release of the ELDEN RING: Shadow of the Erdtree draws near (as of 08.06.2024),
+~~As the release of the ELDEN RING: Shadow of the Erdtree draws near (as of 08.06.2024)~~,
 I am releasing a DLL that tries to disable most of the checks,
 leading to a more debugger-friendly experience.
 
@@ -32,7 +32,7 @@ DSR and DS3 may be supported at a later date (not earlier than after ER SOTE is 
 ### Q&A
 - Q: How does this work?
 
-  A: By locating a common pattern in the antidebug code and neutralizing potential function calls.
+  A: By locating common patterns in the antidebug code for timed checks and preventing them
 
 - Q: How long will it work for?
 
@@ -44,7 +44,7 @@ DSR and DS3 may be supported at a later date (not earlier than after ER SOTE is 
 
 - Q: Support for other games?
 
-  A: Eventually ™
+  A: ~~Eventually ™~~ No.
 
 - Q: Other plans?
 
