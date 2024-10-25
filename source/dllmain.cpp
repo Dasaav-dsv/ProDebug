@@ -1,8 +1,10 @@
+#include <concepts>
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
-#include <thread>
 #include <span>
+#include <thread>
+#include <utility>
 
 #include "index.hpp"
 #include "suspend.hpp"
@@ -27,11 +29,14 @@ std::span<uint8_t> getExeImage() noexcept {
         mInfo.SizeOfImage);
 }
 
-template <typename T>
-inline void writeProtected(void* p, T value) noexcept {
-    DWORD _;
-    VirtualProtect(p, sizeof(value), PAGE_EXECUTE_READWRITE, &_);
-    std::memcpy(p, &value, sizeof(value));
+template <typename T, std::convertible_to<T> Src>
+inline void writeProtected(auto* p, Src&& src) {
+    T value = T(std::forward<Src>(src));
+    DWORD oldProtectDiscard;
+    VirtualProtect(static_cast<LPVOID>(p), sizeof(value),
+        PAGE_EXECUTE_READWRITE, &oldProtectDiscard);
+    std::memcpy(static_cast<void*>(p), static_cast<void*>(&value),
+        sizeof(value));
 }
 
 void patchDbgChecks() try {
