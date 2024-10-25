@@ -65,6 +65,7 @@ void patchDbgChecks() try {
 }
 catch (const std::exception& e) {
     OutputDebugStringA(e.what());
+    OutputDebugStringA(" - Unhandled ProDebug.dll exception.\n");
 }
 
 int DllMain(HMODULE, DWORD reason, LPVOID) {
