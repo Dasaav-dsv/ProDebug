@@ -70,7 +70,7 @@ struct Bytes {
         SortedPattern sorted;
         for (uint16_t i = 0; i < pat.len; ++i) {
             sorted.insert(std::upper_bound(sorted.begin(), sorted.end(), pat.bt[i], [&](uint8_t c, auto&& p) {
-                return count(c) < count(p.first);
+                return count(c) < count(p.second);
             }), { pat.pos[i], pat.bt[i] });
         }
         return sorted;
