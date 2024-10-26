@@ -39,7 +39,7 @@ inline void writeProtected(auto* p, Src&& src) {
         sizeof(value));
 }
 
-void patchDbgChecks() try {
+void patchDbgChecks() noexcept try {
     SuspendMutex suspendThreads;
     std::scoped_lock lock{ suspendThreads };
     auto exe = getExeImage();
